@@ -1,24 +1,33 @@
-# dohodathi's FlaskBone - Small
+# dohodathi's FlaskFactoryBone - Small
 
 also available in the future, the versions medium and large!
 
 ## Purpose
 
-e.g. for creating a rapid db without user authentication
+e.g. for creating a rapid app with a db but without user authentication
+
+### does not deliver
+
+for this features look for medium and large versions in the future
+
+* user authentication
+
+* templates
+
+* extensionibility
 
 ## Installation
 
 ### Requirements
 
-We still use python2 with a postgres database. We recommend using a virtual environment
+We still use python2 with a postgres database. We recommend using a virtual environment.
 
-* ...
 
 ### get this
 
-* clone this repository: `git clone ...`
+* clone this repository: `git clone https://github.com/danielthiel/FlaskFactoryBone-Small.git`
 
-* go to the directory: `cd ...`
+* go to the directory: `cd FlaskFactoryBone-Small/`
 
 * create the virtual environment: `virtualenv venv`
 
@@ -44,7 +53,7 @@ We still use python2 with a postgres database. We recommend using a virtual envi
 
 * again run with: `python manage.py runserver`
 
-* then (on a different terminal) run: `curl http://127.0.0.1:5000/api/v1/friends`
+* then (on a different terminal) run: `curl http://localhost:5000/api/v1/friends`
 
 * should return an empty list
 
@@ -69,3 +78,7 @@ This app is build to run well on heroku. Take this steps to deploy on heroku.
 ### Enviroment
 
 Some enviorment variables that are used by this Bone. Every one should be optional.
+
+* `FLASK_CONFIG` look in the config file for all available configurations
+
+* `FLASK_LOG_FILE` destination for default logging - not used on heroku configuration
