@@ -75,7 +75,28 @@ This app is build to run well on heroku. Take this steps to deploy on heroku.
 
 * now your heroku server should run, look into the logs: `heroku logs`
 
-### Enviroment
+### Migration
+
+Migration via Flask-Migration (using Alembic) changes your database when you change your model without resetting the database.
+To use it, you need to initialze migration:
+
+* `python manage.py db init`
+
+Created files (in the `migrations` dir need to be added under version control! After that every change in your models can be commited for migration:
+
+* `python manage.py db migrate -m "message"`
+
+This will create a change request for your database. To apply these changes run:
+
+* `python manage.py db upgrade`
+
+If you are using heroku commit everything, then run your upgrade via foreman:
+
+* `foreman run python manage.py db upgrade`
+
+and your heroku database is also up to date.
+
+## Enviroment
 
 Some enviorment variables that are used by this Bone. Every one should be optional.
 
